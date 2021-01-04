@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wallet/app/providers/auth_provider.dart';
+import 'package:wallet/app/providers/bottom_navigation_provider.dart';
 
 import 'app/view/login/page/login_page.dart';
 import 'routing/route_generator.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<AuthProvider>(
           create: (BuildContext context) => AuthProvider(),
+        ),
+        ChangeNotifierProvider<BottomNavigationProvider>(
+          create: (BuildContext context) => BottomNavigationProvider(),
         ),
       ],
       child: MaterialApp(

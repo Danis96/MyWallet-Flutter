@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:wallet/app/providers/bottom_navigation_provider.dart';
 import 'package:wallet/app/utils/color_helper.dart';
 import 'package:wallet/app/utils/size_config.dart';
+import 'package:wallet/common/common_empty_container.dart';
 
-Widget topBackgroundContainer() {
+import 'home_card_center_widget.dart';
+
+Widget topBackgroundContainer({
+  BottomNavigationProvider navigationProvider,
+}) {
   return Stack(
     children: <Widget>[
       Container(
@@ -86,6 +92,12 @@ Widget topBackgroundContainer() {
           ],
         ),
       ),
+      if (navigationProvider.selectedIndex == 0)
+        transactionCenterWidget()
+      else if (navigationProvider.selectedIndex == 1)
+        cardCenterWidget()
+      else
+        commonEmptyContainer()
     ],
   );
 }
