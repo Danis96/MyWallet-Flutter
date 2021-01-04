@@ -7,6 +7,7 @@ import 'package:wallet/app/providers/bottom_navigation_provider.dart';
 import 'app/view/login/page/login_page.dart';
 import 'routing/route_generator.dart';
 
+// ignore: avoid_void_async
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp()

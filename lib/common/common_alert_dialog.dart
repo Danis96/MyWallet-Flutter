@@ -37,18 +37,18 @@ Future<void> showMyDialog({
   );
 }
 
-var alertStyle = AlertStyle(
+AlertStyle alertStyle = AlertStyle(
   animationType: AnimationType.fromTop,
   isCloseButton: false,
   isOverlayTapDismiss: false,
-  animationDuration: Duration(milliseconds: 400),
+  animationDuration: const Duration(milliseconds: 400),
   alertBorder: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(8.0),
-    side: BorderSide(
+    side: const BorderSide(
       color: Colors.grey,
     ),
   ),
-  titleStyle: TextStyle(
+  titleStyle: const TextStyle(
     color: Colors.red,
   ),
   alertAlignment: Alignment.center,
@@ -64,10 +64,11 @@ Future<bool> commonMyAlert({
     style: alertStyle,
     // type: AlertType.,
     title: title,
+    // ignore: always_specify_types
     buttons: [
       DialogButton(
-        child: Text(
-          "OK",
+        child: const Text(
+          'OK',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,

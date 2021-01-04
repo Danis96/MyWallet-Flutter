@@ -4,6 +4,7 @@ import 'package:wallet/app/providers/bottom_navigation_provider.dart';
 import 'package:wallet/app/utils/color_helper.dart';
 import 'package:wallet/app/utils/size_config.dart';
 import 'package:wallet/app/view/home/widgets/home_top_background_container.dart';
+import 'package:wallet/common/common_empty_container.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,16 +12,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-    ),
-    Text(
-      'Index 1: Business',
-    ),
-    Text(
-      'Index 2: School',
-    ),
+  final List<Widget> _widgetOptions = <Widget>[
+    commonEmptyContainer(),
+    commonEmptyContainer(),
+    commonEmptyContainer(),
   ];
 
   @override
@@ -51,6 +46,7 @@ class _HomePageState extends State<HomePage> {
         onTap: navigationProvider.onItemTapped,
       ),
       body: ListView(
+        physics: const NeverScrollableScrollPhysics(),
         children: <Widget>[
           topBackgroundContainer(navigationProvider: navigationProvider),
           _widgetOptions.elementAt(navigationProvider.selectedIndex),
