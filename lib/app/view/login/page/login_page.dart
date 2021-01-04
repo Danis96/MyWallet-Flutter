@@ -104,7 +104,10 @@ class LoginPage extends StatelessWidget {
             );
           } else {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamedAndRemoveUntil(Home, (_) => false);
+            Navigator.of(context).pushNamedAndRemoveUntil(
+              Home,
+              (_) => false,
+            );
           }
         },
       );
